@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NebulaHire</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <!-- Animated Stars -->
+  <div class="stars"></div>
+  <div class="stars2"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">NebulaHire</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="animated-text">NebulaHire</h1>
+    <p class="tagline">Find stellar talent in a galaxy of possibilities.</p>
+    <a href="#" class="cta-btn pulse"><span>Join the Beta</span></a>
+    <div class="marquee">
+      🚀 Trusted by startups across the galaxy · 🌐 AI-powered hiring engine · 🔒 Secure, fast & accurate · 🪐 Explore your dream team today!
+    </div>
+  </section>
+
+  <!-- GSAP Animation Script -->
+  <script>
+    // Slide in navbar
+    gsap.to(".navbar", {
+      y: 0,
+      duration: 1,
+      ease: "power2.out"
+    });
+
+    // Hero text entry
+    gsap.from(".animated-text", {
+      opacity: 0,
+      scale: 0.8,
+      delay: 0.5,
+      duration: 1,
+      ease: "back.out(1.7)"
+    });
+
+    // Tagline fade-in on scroll
+    gsap.from(".tagline", {
+      scrollTrigger: {
+        trigger: ".tagline",
+        start: "top 80%",
+      },
+      opacity: 0,
+      y: 20,
+      duration: 1
+    });
+
+    // Marquee fade-in
+    gsap.from(".marquee", {
+      scrollTrigger: {
+        trigger: ".marquee",
+        start: "top 90%",
+      },
+      opacity: 0,
+      y: 20,
+      duration: 1
+    });
+  </script>
+</body>
+</html>
